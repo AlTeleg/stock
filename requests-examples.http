@@ -87,3 +87,7 @@ Content-Type: application/json
 # поиск складов, где есть определенный продукт
 GET {{baseUrl}}/stocks/?products=2
 Content-Type: application/json
+
+# поиск складов, где есть определенный продукт
+GET {{baseUrl}}/stocks/?search=огур
+Content-Type: application/json

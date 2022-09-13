@@ -9,7 +9,7 @@ class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ['id']
+    filterset_fields = ['id', 'title']
     search_fields = ['^title']
 
 
@@ -18,3 +18,9 @@ class StockViewSet(ModelViewSet):
     serializer_class = StockSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['id', 'products']
+    search_fields = ['^products__title']
+    SearchFilter.search_param = 'products__title'
+
+
+
+
